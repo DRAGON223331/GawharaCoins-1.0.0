@@ -1,8 +1,8 @@
-# بناء GawharaCoins على GitHub
+# بناء GawharaCoins 1.2.0 على GitHub
 
-1. ارفع محتويات هذا المجلد إلى Repository.
+1. ارفع محتويات مجلد `GawharaCoins-Source` إلى Repository.
 2. تأكد من وجود `.github/workflows/main.yml`.
 3. افتح Actions وشغّل `Build GawharaCoins`.
-4. بعد النجاح حمّل Artifact باسم `GawharaCoins-JAR`.
+4. بعد نجاح البناء، حمّل Artifact باسم `GawharaCoins-JAR`، وستجد بداخله `GawharaCoins-1.2.0.jar`.
 
-المتطلبات: JDK 25 وPaper API 26.3 build 170-beta. لا ترفع مجلد `target` إلى GitHub؛ workflow يبنيه تلقائيًا.
+المتطلبات: JDK 25 وPaper API 26.3 build 170-beta.

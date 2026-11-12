@@ -4,9 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.gawharasmp</groupId>
   <artifactId>GawharaCoins</artifactId>
-  <version>1.0.0</version>
+  <version>1.2.0</version>
   <name>GawharaCoins</name>
-  <description>Independent GC currency, API and GUI shop for GawharaSMP.</description>
+  <description>Independent GC currency and EconomyShopGUI-style purchase shop for GawharaSMP.</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>25</maven.compiler.release>

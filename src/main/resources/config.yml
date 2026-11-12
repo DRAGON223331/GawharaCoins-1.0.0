@@ -23,6 +23,7 @@ messages:
   taken: '&eRemoved &6%amount% GC &efrom &f%player%&e.'
   set: '&aSet &f%player%&a balance to &e%amount% GC&a.'
   shop-open: '&bWelcome to the Gawhara Coins shop.'
+  shop-empty: '&cNo GC shop products were found. Check EconomyShopGUI/shops or add products to GawharaCoins/config.yml.'
   bought: '&aPurchased &f%item% &afor &e%price% GC&a.'
   shop-full: '&cMake room in your inventory before purchasing.'
   reloaded: '&aConfiguration reloaded.'
@@ -34,6 +35,9 @@ shop:
   title: '&8✦ &bGawhara &fCoins Shop'
   rows: 6
   filler: BLUE_STAINED_GLASS_PANE
+  import-economyshopgui: true
+  price-multiplier: 0.10
+  category-title: '&8GC Shop &7» &b%category% &8(&f%page%&8/&f%pages%&8)'
   items:
     golden_apple:
       material: GOLDEN_APPLE

@@ -1,27 +1,24 @@
-# GawharaCoins 1.0.0 — GawharaSMP
+# GawharaCoins 1.2.0 — متجر GC بتخطيط EconomyShopGUI
 
-عملة مستقلة باسم **Gawhara Coins (GC)**. لا تعدّل رصيد Vault ولا تحتاج إلى Vault. تحفظ الأرصدة في `plugins/GawharaCoins/balances.yml`.
+هذا الإصدار يجعل واجهة GC تتبع التخطيط الفعلي الموجود في ملفات EconomyShopGUI على السيرفر.
 
-## أوامر
-- `/coins` أو `/gc`: عرض الرصيد.
-- `/coins pay <player> <amount>`: تحويل GC للاعب آخر.
-- `/coins top`: ترتيب أعلى الأرصدة.
-- `/coins shop`: فتح متجر GC داخل Inventory GUI.
-- `/coins give <player> <amount>` و`/coins take ...` و`/coins set ...`: للإدارة.
-- `/coins reload`: إعادة تحميل الإعدادات.
+- يقرأ أقسام المتجر من `EconomyShopGUI/sections/` ويستخدم مواضعها وأيقوناتها وأسمائها.
+- يقرأ عدد صفوف القائمة الرئيسية وخلفيتها وشريط التنقل من `EconomyShopGUI/config.yml`.
+- يقرأ صفحات كل قسم من `EconomyShopGUI/shops/` مع ترتيب المنتجات والصفوف ومواقع `slot` وشريط التنقل.
+- يعرض في وصف المنتج سعر الشراء بـ GC وسعر البيع بالدولار.
+- يستبدل رصيد اللاعب الظاهر في رأس/شريط القائمة برصيد GC.
 
-## أسعار متجر GC
-تُعدل المنتجات من `config.yml` داخل `shop.items`. لكل منتج `material`, `name`, `slot`, `amount`, `price`, ويمكن إضافة `lore`. المتجر يعمل من `/coins shop`.
+## العملات
 
-## API العامة للبلجنات الأخرى
-الدوال العامة في Main class `com.gawharasmp.coins.GawharaCoins`:
-- `long getBalance(UUID playerId)`
-- `boolean hasCoins(UUID playerId, long amount)`
-- `boolean depositCoins(UUID playerId, long amount, String reason)`
-- `boolean withdrawCoins(UUID playerId, long amount, String reason)`
-- `boolean awardCoinsOnce(UUID playerId, long amount, String reason, String transactionKey)` — آمنة ضد تكرار مكافأة المهمة/الفعالية بعد إعادة التشغيل.
+- `/coins shop`: شراء بعملة GC فقط. لا يوجد أي إجراء بيع أو استلام GC داخل هذه الواجهة.
+- العنصر الذي اشتراه اللاعب بـ GC يمكن بيعه بالدولار فقط عبر `/shop` إذا كان له سعر `sell` محدد في إعداداته.
+- `/shop`: البيع عبر Vault بالدولار فقط. ملفات المتجر المعدلة تعطّل الشراء بالدولار باستخدام `buy: -1` وتحتفظ بقيم `sell` الأصلية.
+- أرصدة GC مستقلة ولا يتم تحويلها إلى دولار.
 
-الإضافات المتكاملة تستدعي API عبر Bukkit PluginManager reflection حتى لا تحتاج تضمين نسخة API داخل كل JAR. لا تحذف `balances.yml` عند التحديث.
+## ملاحظة
+
+الواجهة تحاكي تخطيط EconomyShopGUI (القائمة الرئيسية، مواضع الأقسام، صفحات المنتجات، والخط السفلي للتنقل)، لكنها واجهة مخصصة مستقلة؛ الشراء يتم مباشرة بالنقر الأيسر ولا يستخدم نافذة تأكيد المعاملة الداخلية في EconomyShopGUI.
 
 ## البناء
-Paper 26.3 build 170-beta + Java 25. ارفع المشروع إلى GitHub ثم Actions → Build GawharaCoins JAR؛ الـ Artifact الناتج اسمه `GawharaCoins-JAR`.
+
+يتطلب Java 25 وPaper API 26.3 build 170-beta. استخدم GitHub Actions في `.github/workflows/main.yml` أو راجع `BUILD-ON-GITHUB-AR.md`.

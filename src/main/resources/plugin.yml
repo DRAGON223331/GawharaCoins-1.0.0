@@ -1,9 +1,9 @@
 name: GawharaCoins
-version: 1.0.0
+version: 1.2.0
 main: com.gawharasmp.coins.GawharaCoins
 api-version: '26.3'
 authors: [GawharaSMP]
-description: Independent Gawhara Coins currency, public API and GUI shop.
+description: Independent Gawhara Coins currency and EconomyShopGUI-style purchase shop.
 commands:
   coins:
     description: View, transfer and spend Gawhara Coins.
