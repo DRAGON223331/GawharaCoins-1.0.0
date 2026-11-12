@@ -1,0 +1,93 @@
+settings:
+  prefix: '&8[&bGawharaCoins&8] &r'
+  currency-name: 'Gawhara Coins'
+  currency-short: 'GC'
+  autosave-seconds: 60
+
+storage:
+  history-limit: 5000
+
+messages:
+  no-permission: '&cYou do not have permission.'
+  player-only: '&cThis command can only be used in-game.'
+  balance: '&bYour balance: &e%balance% GC'
+  other-balance: '&f%player% &7has &e%balance% GC'
+  paid: '&aYou sent &e%amount% GC &ato &f%player%&a.'
+  received: '&aYou received &e%amount% GC &afrom &f%player%&a.'
+  insufficient: '&cYou do not have enough GC.'
+  invalid-amount: '&cEnter a valid non-negative whole number.'
+  player-not-found: '&cPlayer not found.'
+  top-header: '&8&m------&b✦ &lTOP GC BALANCES &8&m------'
+  top-line: '&e%rank%. &f%player% &8» &b%balance% GC'
+  given: '&aAdded &e%amount% GC &ato &f%player%&a.'
+  taken: '&eRemoved &6%amount% GC &efrom &f%player%&e.'
+  set: '&aSet &f%player%&a balance to &e%amount% GC&a.'
+  shop-open: '&bWelcome to the Gawhara Coins shop.'
+  bought: '&aPurchased &f%item% &afor &e%price% GC&a.'
+  shop-full: '&cMake room in your inventory before purchasing.'
+  reloaded: '&aConfiguration reloaded.'
+  transaction-failed: '&cThe transaction could not be completed.'
+  cannot-pay-self: '&cYou cannot transfer coins to yourself.'
+
+shop:
+  enabled: true
+  title: '&8✦ &bGawhara &fCoins Shop'
+  rows: 6
+  filler: BLUE_STAINED_GLASS_PANE
+  items:
+    golden_apple:
+      material: GOLDEN_APPLE
+      name: '&6Golden Apple'
+      lore: ['&7A quick survival boost.']
+      slot: 10
+      amount: 1
+      price: 2
+    enchanted_golden_apple:
+      material: ENCHANTED_GOLDEN_APPLE
+      name: '&dEnchanted Golden Apple'
+      lore: ['&7A rare premium reward.']
+      slot: 11
+      amount: 1
+      price: 18
+    diamond_pickaxe:
+      material: DIAMOND_PICKAXE
+      name: '&bDiamond Pickaxe'
+      lore: ['&7Ready for your next expedition.']
+      slot: 12
+      amount: 1
+      price: 8
+    shulker_box:
+      material: SHULKER_BOX
+      name: '&dShulker Box'
+      lore: ['&7More space for your adventures.']
+      slot: 13
+      amount: 1
+      price: 6
+    diamond_chestplate:
+      material: DIAMOND_CHESTPLATE
+      name: '&bDiamond Chestplate'
+      lore: ['&7A strong armor upgrade.']
+      slot: 14
+      amount: 1
+      price: 10
+    name_tag:
+      material: NAME_TAG
+      name: '&eName Tag'
+      lore: ['&7Name your favorite companion.']
+      slot: 15
+      amount: 1
+      price: 3
+    elytra:
+      material: ELYTRA
+      name: '&dElytra'
+      lore: ['&7A premium exploration reward.']
+      slot: 16
+      amount: 1
+      price: 45
+    beacon:
+      material: BEACON
+      name: '&bBeacon'
+      lore: ['&7A rare building reward.']
+      slot: 22
+      amount: 1
+      price: 30
